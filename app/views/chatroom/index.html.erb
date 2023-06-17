@@ -1,8 +1,17 @@
 <h1>Chatroom</h1>
 <div>
 <ul>
-  <% @messages.each do |message|%>
-    <li><strong><%= message.user.username %>: </strong><%= message.body %></li>
-  <% end %>
+  <%= render @messages %>
 </ul>
+</div>
+
+<div>
+<%= form_with(model: @message, url: messages_path) do |form| %>
+  <div>
+    <%= form.label :username, current_user.username %>
+    <%= form.text_field :body %>
+  </div>
+
+  <%= form.submit %>
+<% end %>
 </div>
