@@ -1,8 +1,8 @@
 name: Generate Minor Release
 on: workflow_dispatch
 jobs: 
- first-job: 
-  runs-on: ubuntu-20.04
-  steps:
-   - name: Greeting
-   - run: echo "Hello World"
+  first-job: 
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Greeting
+      - run: echo "Hello World"
