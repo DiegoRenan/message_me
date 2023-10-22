@@ -1,8 +1,17 @@
 name: Generate Minor Release
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
+    inputs:
+      minor_version:
+        required: true
+        type: number
 jobs: 
   first-job: 
     runs-on: ubuntu-20.04
     steps:
-      - name: Greeting
-        run: echo "Hello World"
+      - name: Get code
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: List branches
+        run: echo "Version ${{ inputs.minor_version }}"
