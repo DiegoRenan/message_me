@@ -10,4 +10,4 @@ jobs:
       - env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh api respos/DiegoRenan/message_me/issues
+          gh api repos/DiegoRenan/message_me/issues
