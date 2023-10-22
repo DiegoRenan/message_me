@@ -5,4 +5,4 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Greeting
-      - run: echo "Hello World"
+        run: echo "Hello World"
