@@ -4,10 +4,13 @@ on:
 jobs: 
   use_api: 
     runs-on: ubuntu-20.04
-    permissions:
-      issues: read
     steps:
       - env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh api repos/DiegoRenan/message_me/issues
+          gh api --header 'Accept: application/vnd.github+json'
+          | --method POST
+          | repos/DiegoRenan/message_me/releases/generate-notes
+          | -f tag_name="0.0.1"
+          | -f target_commitish="main"
+          | -f previous_tag_name="main"
